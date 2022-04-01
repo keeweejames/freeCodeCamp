@@ -511,4 +511,4 @@ const outerWear = "sweater";
 }
 
 myOutfit();
-
+*/
