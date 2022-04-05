@@ -1325,3 +1325,69 @@ function isLess(a, b) {
 
 isLess(10, 15);
 
+When a return statement is reached, the execution of the current
+function stops and control returns to the calling location.
+
+Example
+
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+The above will display the string Hello in the console,
+and return the string World. The string byebye will never display in the console,
+because the function exits at the return statement.
+
+Test 81
+
+// Setup
+function abTest(a, b) {
+  // Only change code below this line
+if (a < 0 || b < 0) {
+  return undefined;
+}
+
+  // Only change code above this line
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2,2);
+
+In the casino game Blackjack, a player can gain an advantage
+over the house by keeping track of the relative number of high
+and low cards remaining in the deck. This is called Card Counting.
+
+Having more high cards remaining in the deck favors the player.
+Each card is assigned a value according to the table below.
+When the count is positive, the player should bet high.
+When the count is zero or negative, the player should bet low.
+
+Count Change    	Cards
++1            	2, 3, 4, 5, 6
+0	                7, 8, 9
+-1	        10, 'J', 'Q', 'K', 'A'
+
+Test 82
+
+let count = 0;
+
+function cc(card) {
+  // Only change code below this line
+if (card = 2, 3, 4, 5, 6);
+count = count + 1;
+if (card = 7, 8 ,9);
+count = count;
+if (card = 10, 'J', 'Q', 'K', 'A');
+count = count - 1;
+
+  if count >= 1
+  return (count, " Bet");
+  else count <= 0;
+  return (count, " Hold");
+  // Only change code above this line
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
