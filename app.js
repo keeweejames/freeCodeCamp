@@ -1376,18 +1376,236 @@ let count = 0;
 
 function cc(card) {
   // Only change code below this line
-if (card = 2, 3, 4, 5, 6);
-count = count + 1;
-if (card = 7, 8 ,9);
-count = count;
-if (card = 10, 'J', 'Q', 'K', 'A');
-count = count - 1;
-
-  if count >= 1
-  return (count, " Bet");
-  else count <= 0;
-  return (count, " Hold");
+switch (card) {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      count++;
+      break;
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      count--;
+      break;
+  }
+  if (count > 0) {
+    return count + " Bet";
+  } else {
+    return count + " Hold";
+  }
   // Only change code above this line
 }
 
 cc(2); cc(3); cc(7); cc('K'); cc('A');
+
+Test 83
+
+const myDog = {
+  // Only change code below this line
+"name": "Foxy",
+"legs": 4,
+"tails": 1,
+"friends": ["Paddles", "Hairy", "Skinny"]
+
+  // Only change code above this line
+};
+
+There are two ways to access the properties of an object: dot notation (.)
+and bracket notation ([]), similar to an array.
+
+Dot notation is what you use when you know the name of the property you're
+trying to access ahead of time.
+
+Here is a sample of using dot notation (.) to read an object's property:
+
+const myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+
+const prop1val = myObj.prop1;
+const prop2val = myObj.prop2;
+prop1val would have a value of the string val1,
+and prop2val would have a value of the string val2.
+
+Test 84
+
+// Setup
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+// Only change code below this line
+const hatValue = testObj.hat;      // Change this line
+const shirtValue = testObj.shirt;    // Change this line
+
+The second way to access the properties of an object is bracket notation ([]).
+If the property of the object you are trying to access has a space in its name,
+you will need to use bracket notation.
+
+However, you can still use bracket notation on object properties without spaces.
+
+Here is a sample of using bracket notation to read an object's property:
+
+const myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
+myObj["Space Name"] would be the string Kirk, myObj['More Space'] would be the string Spock,
+and myObj["NoSpace"] would be the string USS Enterprise.
+
+Note that property names with spaces in them must be in quotes (single or double).
+
+Test 85
+
+// Setup
+const testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+// Only change code below this line
+const entreeValue = testObj["an entree"];   // Change this line
+const drinkValue = testObj["the drink"];    // Change this line
+
+Another use of bracket notation on objects is to access a property which is
+stored as the value of a variable. This can be very useful for iterating through
+an object's properties or when accessing a lookup table.
+
+Here is an example of using a variable to access a property:
+
+const dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+};
+
+const myDog = "Hunter";
+const myBreed = dogs[myDog];
+console.log(myBreed);
+The string Doberman would be displayed in the console.
+
+Another way you can use this concept is when the property's name is
+collected dynamically during the program execution, as follows:
+
+const someObj = {
+  propName: "John"
+};
+
+function propPrefix(str) {
+  const s = "prop";
+  return s + str;
+}
+
+const someProp = propPrefix("Name");
+console.log(someObj[someProp]);
+someProp would have a value of the string propName, and the string John
+would be displayed in the console.
+
+Note that we do not use quotes around the variable name when using it 
+ access the property because we are using the value of the variable, not the name.
+
+ Test 86
+
+ // Setup
+const testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line
+const playerNumber = 16;  // Change this line
+const player = testObj[playerNumber];   // Change this line
+
+After you've created a JavaScript object, you can update its properties
+at any time just like you would update any other variable. You can use either
+dot or bracket notation to update.
+
+For example, let's look at ourDog:
+
+const ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+Since he's a particularly happy dog, let's change his name to the
+string Happy Camper. Here's how we update his object's
+name property: ourDog.name = "Happy Camper"; or ourDog["name"] = "Happy Camper";
+Now when we evaluate ourDog.name, instead of getting Camper, we'll get his new name, Happy Camper.
+
+Test 87
+
+// Setup
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+// Only change code below this line
+myDog.name = "Happy Coder"
+
+Test 88
+
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof";
+
+Test 89
+
+// Setup
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line
+
+delete myDog.tails;
+
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+
+Here is an example of a simple reverse alphabet lookup:
+
+const alpha = {
+  1:"Z",
+  2:"Y",
+  3:"X",
+  4:"W",
+  ...
+  24:"C",
+  25:"B",
+  26:"A"
+};
+
+alpha[2];
+alpha[24];
+
+const value = 2;
+alpha[value];
+alpha[2] is the string Y, alpha[24] is the string C, and alpha[value] is the string Y.
+
+*/
